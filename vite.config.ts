@@ -29,13 +29,6 @@ export default defineConfig({
           react: "React",
           "react-dom": "ReactDOM",
         },
-        // Make sure assets are properly handled
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.names?.some((name) => name.endsWith(".css"))) {
-            return "shirt-mockup-generator.css";
-          }
-          return assetInfo.names[0];
-        },
       },
     },
   },
