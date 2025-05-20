@@ -60,6 +60,13 @@ jobs:
             echo "index.html already exists in dist, skipping copy"
           fi
 
+      - name: Ensure public directory is copied
+        run: |
+          if [ -d "./public" ]; then
+            echo "Copying public directory to dist"
+            cp -r ./public/* ./dist/
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
