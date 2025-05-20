@@ -39,25 +39,25 @@ export function ShirtMockupGenerator() {
 
   // Shirt types with labels
   const shirtTypes = [
-    { value: "tshirt", label: "T-Shirt", url: "/inka-template (2).jpg" },
-    { value: "polo", label: "Polo", url: "/inka-template (3).jpg" },
+    { value: "tshirt", label: "T-Shirt", url: "/inka-template-2.jpg" },
+    { value: "polo", label: "Polo", url: "/inka-template-3.jpg" },
     {
       value: "long-sleeve",
       label: "Long Sleeve",
-      url: "/inka-template (7).jpg",
+      url: "/inka-template-7.jpg",
     },
-    { value: "3/4-sleeve", label: "3/4 Sleeve", url: "/inka-template (6).jpg" },
-    { value: "tankTop", label: "Tank top", url: "/inka-template (5).jpg" },
-    { value: "v-neck", label: "V-Neck", url: "/inka-template (8).jpg" },
+    { value: "3/4-sleeve", label: "3/4 Sleeve", url: "/inka-template-6.jpg" },
+    { value: "tankTop", label: "Tank top", url: "/inka-template-5.jpg" },
+    { value: "v-neck", label: "V-Neck", url: "/inka-template-8.jpg" },
     {
       value: "pocket-tshirt",
       label: "Pocket T-Shirt",
-      url: "/inka-template (1).jpg",
+      url: "/inka-template-1.jpg",
     },
     {
       value: "hoodie",
       label: "Hoodie",
-      url: "/inka-template (4).jpg",
+      url: "/inka-template-4.jpg",
     },
   ];
 
