@@ -62,6 +62,8 @@ jobs:
 
       - name: Ensure public directory is copied
         run: |
+          mkdir -p ./dist/public
+          echo "Created public directory inside dist"
           if [ -d "./public" ]; then
             echo "Copying public directory to dist"
             cp -r ./public/* ./dist/public/
