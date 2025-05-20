@@ -55,7 +55,7 @@ jobs:
         run: |
           if [ ! -f "./dist/index.html" ]; then
             echo "Creating index.html file"
-            cat > ./dist/index.html << 'EOL'
+            cat > ./dist/index.html << 'EOF'
             <!DOCTYPE html>
             <html lang="en">
             <head>
@@ -82,11 +82,10 @@ jobs:
               </script>
             </body>
             </html>
-            EOL
-          else
-            echo "index.html already exists, skipping creation"
-          fi
-
+            EOF
+                else
+                  echo "index.html already exists, skipping creation"
+                fi
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
