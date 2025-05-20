@@ -12,6 +12,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+import tShirt from "../assets/inka-template-2.jpg";
+import polo from "../assets/inka-template-3.jpg";
+import longSleeve from "../assets/inka-template-7.jpg";
+import threeFourthSleeve from "../assets/inka-template-6.jpg";
+import tankTop from "../assets/inka-template-5.jpg";
+import vNeck from "../assets/inka-template-8.jpg";
+import pocketTshirt from "../assets/inka-template-1.jpg";
+import hoodie from "../assets/inka-template-4.jpg";
 
 type ShirtType =
   | "tshirt"
@@ -39,25 +47,25 @@ export function ShirtMockupGenerator() {
 
   // Shirt types with labels
   const shirtTypes = [
-    { value: "tshirt", label: "T-Shirt", url: "inka-template-2.jpg" },
-    { value: "polo", label: "Polo", url: "inka-template-3.jpg" },
+    { value: "tshirt", label: "T-Shirt", url: tShirt },
+    { value: "polo", label: "Polo", url: polo },
     {
       value: "long-sleeve",
       label: "Long Sleeve",
-      url: "inka-template-7.jpg",
+      url: longSleeve,
     },
-    { value: "3/4-sleeve", label: "3/4 Sleeve", url: "inka-template-6.jpg" },
-    { value: "tankTop", label: "Tank top", url: "inka-template-5.jpg" },
-    { value: "v-neck", label: "V-Neck", url: "inka-template-8.jpg" },
+    { value: "3/4-sleeve", label: "3/4 Sleeve", url: threeFourthSleeve },
+    { value: "tankTop", label: "Tank top", url: tankTop },
+    { value: "v-neck", label: "V-Neck", url: vNeck },
     {
       value: "pocket-tshirt",
       label: "Pocket T-Shirt",
-      url: "inka-template-1.jpg",
+      url: pocketTshirt,
     },
     {
       value: "hoodie",
       label: "Hoodie",
-      url: "inka-template-4.jpg",
+      url: hoodie,
     },
   ];
 

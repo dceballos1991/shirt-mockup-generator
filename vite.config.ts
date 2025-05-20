@@ -3,9 +3,12 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
+const BASE_URL = "https://dceballos1991.github.io/shirt-mockup-generator/";
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: BASE_URL,
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
