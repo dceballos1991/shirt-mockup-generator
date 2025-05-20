@@ -50,6 +50,43 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Add this step to create an index.html file if it doesn't exist
+      - name: Create index.html if needed
+        run: |
+          if [ ! -f "./dist/index.html" ]; then
+            echo "Creating index.html file"
+            cat > ./dist/index.html << 'EOL'
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Shirt Mockup Generator</title>
+              <link rel="stylesheet" href="./shirt-mockup-generator.css">
+            </head>
+            <body>
+              <div id="shirt-mockup-container" style="width:100%; min-height:600px; margin: 0 auto;"></div>
+              
+              <script src="./shirt-mockup-generator.iife.js"></script>
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  setTimeout(function() {
+                    if (window.ShirtMockupGenerator) {
+                      console.log("ShirtMockupGenerator found:", window.ShirtMockupGenerator);
+                      window.ShirtMockupGenerator.mount("shirt-mockup-container");
+                    } else {
+                      console.error("ShirtMockupGenerator not found in window object!");
+                    }
+                  }, 500);
+                });
+              </script>
+            </body>
+            </html>
+            EOL
+          else
+            echo "index.html already exists, skipping creation"
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
