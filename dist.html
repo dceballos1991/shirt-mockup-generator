@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shirt Mockup Generator</title>
+    <link rel="stylesheet" href="./shirt-mockup-generator.css" />
+  </head>
+  <body>
+    <!-- Make sure this element exists before script execution -->
+    <div
+      id="shirt-mockup-container"
+      style="width: 100%; min-height: 600px; margin: 0 auto"
+    ></div>
+
+    <script src="./shirt-mockup-generator.iife.js"></script>
+    <script>
+      // Use window load event to ensure everything is loaded
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          // Double check the element exists
+          const container = document.getElementById("shirt-mockup-container");
+          if (!container) {
+            console.error("Container element not found!");
+            return;
+          }
+
+          if (window.ShirtMockupGenerator) {
+            console.log("ShirtMockupGenerator found, mounting to:", container);
+            window.ShirtMockupGenerator.mount("shirt-mockup-container");
+          } else {
+            console.error("ShirtMockupGenerator not found in window object!");
+          }
+        }, 1000); // Longer timeout to ensure everything is loaded
+      });
+    </script>
+  </body>
+</html>
