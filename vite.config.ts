@@ -11,6 +11,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  publicDir: "public",
   define: {
     "process.env": {}, // This ensures process.env is replaced with an empty object
     // You can also define specific environment variables:
