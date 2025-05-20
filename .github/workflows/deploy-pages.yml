@@ -55,37 +55,35 @@ jobs:
         run: |
           if [ ! -f "./dist/index.html" ]; then
             echo "Creating index.html file"
-            cat > ./dist/index.html << 'EOF'
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Shirt Mockup Generator</title>
-              <link rel="stylesheet" href="./shirt-mockup-generator.css">
-            </head>
-            <body>
-              <div id="shirt-mockup-container" style="width:100%; min-height:600px; margin: 0 auto;"></div>
-              
-              <script src="./shirt-mockup-generator.iife.js"></script>
-              <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                  setTimeout(function() {
-                    if (window.ShirtMockupGenerator) {
-                      console.log("ShirtMockupGenerator found:", window.ShirtMockupGenerator);
-                      window.ShirtMockupGenerator.mount("shirt-mockup-container");
-                    } else {
-                      console.error("ShirtMockupGenerator not found in window object!");
-                    }
-                  }, 500);
-                });
-              </script>
-            </body>
-            </html>
-            EOF
-                else
-                  echo "index.html already exists, skipping creation"
-                fi
+            echo '<!DOCTYPE html>' > ./dist/index.html
+            echo '<html lang="en">' >> ./dist/index.html
+            echo '<head>' >> ./dist/index.html
+            echo '  <meta charset="UTF-8">' >> ./dist/index.html
+            echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">' >> ./dist/index.html
+            echo '  <title>Shirt Mockup Generator</title>' >> ./dist/index.html
+            echo '  <link rel="stylesheet" href="./shirt-mockup-generator.css">' >> ./dist/index.html
+            echo '</head>' >> ./dist/index.html
+            echo '<body>' >> ./dist/index.html
+            echo '  <div id="shirt-mockup-container" style="width:100%; min-height:600px; margin: 0 auto;"></div>' >> ./dist/index.html
+            echo '' >> ./dist/index.html
+            echo '  <script src="./shirt-mockup-generator.iife.js"></script>' >> ./dist/index.html
+            echo '  <script>' >> ./dist/index.html
+            echo '    document.addEventListener("DOMContentLoaded", function() {' >> ./dist/index.html
+            echo '      setTimeout(function() {' >> ./dist/index.html
+            echo '        if (window.ShirtMockupGenerator) {' >> ./dist/index.html
+            echo '          console.log("ShirtMockupGenerator found:", window.ShirtMockupGenerator);' >> ./dist/index.html
+            echo '          window.ShirtMockupGenerator.mount("shirt-mockup-container");' >> ./dist/index.html
+            echo '        } else {' >> ./dist/index.html
+            echo '          console.error("ShirtMockupGenerator not found in window object!");' >> ./dist/index.html
+            echo '        }' >> ./dist/index.html
+            echo '      }, 500);' >> ./dist/index.html
+            echo '    });' >> ./dist/index.html
+            echo '  </script>' >> ./dist/index.html
+            echo '</body>' >> ./dist/index.html
+            echo '</html>' >> ./dist/index.html
+          else
+            echo "index.html already exists, skipping creation"
+          fi
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
