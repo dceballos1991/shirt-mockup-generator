@@ -22,6 +22,13 @@ const ShirtMockupGenerator = {
 // Explicitly assign to window
 window.ShirtMockupGenerator = ShirtMockupGenerator;
 
+// Optional auto-initialization for local development
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.getElementById("root")) {
+    ShirtMockupGenerator.mount("root");
+  }
+});
+
 // For Vite/TypeScript compatibility, add the ShirtMockupGenerator to the Window interface
 declare global {
   interface Window {
