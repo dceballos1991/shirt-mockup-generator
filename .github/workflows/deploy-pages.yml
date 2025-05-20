@@ -64,7 +64,7 @@ jobs:
         run: |
           if [ -d "./public" ]; then
             echo "Copying public directory to dist"
-            cp -r ./public/* ./dist/
+            cp -r ./public/* ./dist/public/
           fi
 
       - name: Setup Pages
